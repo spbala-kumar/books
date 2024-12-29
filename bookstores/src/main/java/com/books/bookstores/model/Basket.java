@@ -6,18 +6,17 @@ public class Basket {
 
     private List<Book> bookList;
 
-    public Basket(List<Book> list) {
+
+    public Basket(List<Book> bookList) {
+        this.bookList = bookList;
     }
 
     public List<Book> getBookList() {
         return bookList;
     }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
-
-
-
-
 }
+
+
+
+
+
