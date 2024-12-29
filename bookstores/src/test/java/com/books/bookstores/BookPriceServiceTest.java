@@ -29,14 +29,13 @@ public class BookPriceServiceTest {
     }
 
 
-    // C:1 : If Basket with no books  then Calculated price should be 0 EUR
-  /*  @Test
+    // Scenario 1 : If Basket with no books  then Calculated price should be 0 EUR
+    @Test
     public void testEmptyBasket() {
-        List<String> bookList1 = new ArrayList<>();
-        Basket basket = new Basket(bookList1.stream().map(Book::new).toList());
+         Basket basket = new Basket(Collections.emptyList());
         assertEquals(0, bookPriceService.calculatePrice(basket));
     }
-*/
+
     /**
      * Scenario:2 : If Basket with only one book  then Calculated price should be 50 EUR(1 * 50)
      */
@@ -122,24 +121,26 @@ public class BookPriceServiceTest {
     }
 
     /**
-     * Scenario:6 : If Basket with mixed  books
+     * Scenario:7 : If Basket with mixed  books
      *         then Calculated price should be based on distinct set
      *
      */
-    /*@Test
+    @Test
     public void testWithMixedBooksBasket() {
         List<String> bookList1 = new ArrayList<>();
         bookList1.add("Clean Code");
         bookList1.add("Clean Code");
         bookList1.add("Clean Coder");
+        bookList1.add("Clean Coder");
+        bookList1.add("Clean Architecture");
         bookList1.add("Clean Architecture");
         bookList1.add("Test Driven Development by Example");
         bookList1.add("Working Effectively With Legacy Code");
         Basket basket = new Basket(bookList1.stream().map(Book::new).toList());
 
-        double expectedPrice = 0.0;
+        double expectedPrice = 322.5;
         assertEquals(expectedPrice, bookPriceService.calculatePrice(basket));
-    }*/
+    }
 
 
 
